@@ -164,9 +164,9 @@ const ProductEdit = () => {
         try {
             const newProduct = await updateProductAPI(inputs);
             dispatch(addProduct(newProduct));
-            toast.success("Product updated");
+            toast.success("Product updated successfully");
             navigate("/product");
-             toast.success("Product updated successfully");
+            
           } catch (err: unknown) {
             const errorMessage = err instanceof Error ? err.message : "Something went wrong";
             toast.error(errorMessage);

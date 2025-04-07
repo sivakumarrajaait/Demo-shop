@@ -127,9 +127,9 @@ const ProductPost = () => {
         try {
             const newProduct = await createProductAPI(inputs);
             dispatch(addProduct(newProduct));
-            toast.success("Product created");
-            navigate("/product");
             toast.success("Product created successfully");
+            navigate("/product");
+           
           }  catch (err: unknown) {
                       const errorMessage = err instanceof Error ? err.message : "Something went wrong";
                       toast.error(errorMessage);
