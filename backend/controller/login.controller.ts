@@ -7,7 +7,11 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     const { email, password } = req.body;
 
     try {
-        const user = await User.findOne({  email: email.trim().toLowerCase() });
+        if (typeof email !== 'string' || !validator.isEmail(email)) {
+            throw new Error('Invalid email');
+          }
+          
+          const user = await User.findOne({ email: email.trim().toLowerCase() });
         if (!user) {
             res.status(400).json({ result: null, message: 'Invalid credentials' });
             return;
