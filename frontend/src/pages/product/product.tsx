@@ -29,6 +29,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/header";
 import { isValidDate } from "../../utils/validation";
+import { toast } from "react-toastify";
 
 const ProductList = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -67,8 +68,10 @@ const ProductList = () => {
       await deleteProductAPI(selectedId);
       dispatch(deleteProduct(selectedId));
       handleMenuClose();
+      toast.success("Product deleted successfully");
     } catch (error) {
       console.error("Failed to delete product:", error);
+      toast.error("Failed to delete product");
     }
   };
 
