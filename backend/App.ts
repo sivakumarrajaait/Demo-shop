@@ -11,7 +11,7 @@ import { BullAdapter } from "@bull-board/api/bullAdapter";
 import { emailQueue } from "./config/queue";  
 dotenv.config();
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 5000;
 
 
