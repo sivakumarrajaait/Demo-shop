@@ -10,6 +10,7 @@ import ProductList from "./pages/product/product";
 import ProductPost from "./pages/product/productPost.tsx/productPost";
 import ProductEdit from "./pages/product/productEdit.tsx/productEdit";
 import ProductView from "./pages/product/productView.tsx/productView";
+import React from "react";
 
 const ProtectedRoute = ({ element }: { element: JSX.Element }) => {
   useEffect(() => {

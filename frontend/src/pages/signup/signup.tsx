@@ -8,6 +8,7 @@ interface InputState {
   mobile: string;
   email: string;
   password: string;
+  [key: string]: string; 
 }
 
 type FieldError = {
