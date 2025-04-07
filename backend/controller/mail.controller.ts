@@ -29,7 +29,7 @@ export const sendEmail = async (req: Request, res: Response): Promise<void> => {
 
     const source = fs.readFileSync(templatePath, "utf8");
     const compiledTemplate = handlebars.compile(source);
-    const htmlContent = compiledTemplate(variables || {});
+    const htmlContent = compiledTemplate(variables ?? {});
 
     const emailAttachments =
       Array.isArray(attachments) &&
@@ -45,7 +45,7 @@ export const sendEmail = async (req: Request, res: Response): Promise<void> => {
     const mailOptions = {
       from: "sivakumarrajaait@gmail.com",
       to: to.trim(),
-      subject: subject?.trim() || "No Subject",
+      subject: subject?.trim() ?? "No Subject",
       html: htmlContent,
       attachments: emailAttachments,
     };
