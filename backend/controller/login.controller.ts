@@ -13,7 +13,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
           
           const user = await User.findOne({ email: email.trim().toLowerCase() });
         if (!user) {
-            res.status(400).json({ result: null, message: 'Invalid credentials' });
+            res.status(400).json({ result: null, message: 'Please Signup first' });
             return;
         }
 

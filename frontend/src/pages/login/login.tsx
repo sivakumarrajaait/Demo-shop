@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link} from "react-router-dom";
 import { toast } from "react-toastify";
 import { getLoginType, saveToken } from "../../utils/storage";
 import { isAuthenticated } from "../../utils/auth";
@@ -106,8 +106,13 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-4xl">
-        <div className="w-full md:w-1/2 bg-blue-600 hidden md:flex items-center justify-center">
+        <div className="w-full flex flex-col md:w-1/2 bg-blue-600 hidden md:flex items-center justify-center">
           <h1 className="text-white text-3xl font-bold">User Login</h1>
+          <Link to="/signup">
+          <button className=" text-white bg-white/10 hover:bg-white/20 rounded-full p-2">
+            Sign Up
+          </button>
+          </Link>
         </div>
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center items-center">
           <h1 className="text-3xl text-blue-600 font-bold mb-6">Login</h1>

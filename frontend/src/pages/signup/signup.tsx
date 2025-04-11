@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Signup as signupApi } from "../../api/signup";
 import { isValidEmail } from "../../utils/validation";
@@ -173,8 +173,13 @@ const Signup = () => {
           </form>
         </div>
 
-        <div className="w-full md:w-1/2 bg-blue-600 hidden md:flex items-center justify-center">
+        <div className="w-full flex flex-col md:w-1/2 bg-blue-600 hidden md:flex items-center justify-center">
           <h1 className="text-white text-3xl font-bold">User Registration</h1>
+          <Link to="/" >
+          <button className=" text-white bg-white/10 hover:bg-white/20 rounded-full p-2">
+            Login
+          </button>
+          </Link>
         </div>
       </div>
     </div>

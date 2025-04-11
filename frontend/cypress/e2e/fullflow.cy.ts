@@ -25,15 +25,10 @@ describe('End-to-End Product Flow', () => {
       cy.contains(/login successful/i).should('exist');
       cy.url().should('include', '/product'); 
     });
-    it('click button to add product', () => {
-        cy.visit('/'); 
-        cy.get('input[name="email"]').type(uniqueEmail);
-        cy.get('input[name="password"]').type(password);
-        cy.get('button[type="submit"]').click();
-    
-        cy.contains(/login successful/i).should('exist');
-        cy.url().should('include', '/product'); 
-      });
+    it('Navigates to product create page', () => {
+      cy.get('[data-testid="add-product-btn"]').click();
+      cy.url().should('include', '/product/create');
+    });
     it('Posts a new product', () => {
   
       cy.get('button[type="submit"]').click();
